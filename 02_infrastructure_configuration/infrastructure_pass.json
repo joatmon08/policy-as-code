@@ -1,0 +1,22 @@
+{
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "aws_security_group_rule",
+      "name": "example",
+      "instances": [
+        {
+          "attributes": {
+            "cidr_blocks": [
+              "172.16.0.0/16"
+            ],
+            "from_port": 5432,
+            "protocol": "tcp",
+            "to_port": 5432,
+            "type": "ingress"
+          }
+        }
+      ]
+    }
+  ]
+}

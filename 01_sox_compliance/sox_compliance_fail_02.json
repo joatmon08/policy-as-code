@@ -1,0 +1,14 @@
+[
+  {
+    "user": {
+      "login": "team-lead"
+    },
+    "state": "APPROVED"
+  },
+  {
+    "user": {
+      "login": "team-lead"
+    },
+    "state": "APPROVED"
+  }
+]

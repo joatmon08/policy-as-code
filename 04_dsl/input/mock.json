@@ -1,0 +1,38 @@
+[
+  {
+    "SourceNS": "default",
+    "SourceName": "web",
+    "DestinationNS": "default",
+    "DestinationName": "database",
+    "SourceType": "consul",
+    "Action": "allow",
+    "Precedence": 9
+  },
+  {
+    "SourceNS": "default",
+    "SourceName": "app",
+    "DestinationNS": "default",
+    "DestinationName": "database",
+    "SourceType": "consul",
+    "Action": "allow",
+    "Precedence": 9
+  },
+  {
+    "SourceNS": "default",
+    "SourceName": "web",
+    "DestinationNS": "default",
+    "DestinationName": "app",
+    "SourceType": "consul",
+    "Action": "allow",
+    "Precedence": 9
+  },
+  {
+    "SourceNS": "default",
+    "SourceName": "*",
+    "DestinationNS": "default",
+    "DestinationName": "*",
+    "SourceType": "consul",
+    "Action": "allow",
+    "Precedence": 5
+  }
+]
