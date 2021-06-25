@@ -1,0 +1,5 @@
+{
+    "exceptions": {
+        "intentions": ["web"]
+    }
+}
