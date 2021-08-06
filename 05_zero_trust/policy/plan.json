@@ -1,0 +1,949 @@
+{
+    "planned_values": {
+        "outputs": {
+            "boundary_auth_method_id": {
+                "sensitive": false,
+                "value": "ampw_ePAfzW6AYk"
+            },
+            "boundary_endpoint": {
+                "sensitive": false,
+                "value": "http://zero-controller-mutt-145356253.us-east-2.elb.amazonaws.com:9200"
+            },
+            "boundary_operations_password": {
+                "sensitive": true,
+                "value": "REDACTED_SENSITIVE"
+            },
+            "boundary_products_password": {
+                "sensitive": true,
+                "value": "REDACTED_SENSITIVE"
+            },
+            "boundary_target_eks": {
+                "sensitive": false,
+                "value": "ttcp_jwREIXrmDA"
+            },
+            "boundary_target_frontend": {
+                "sensitive": false,
+                "value": ""
+            },
+            "boundary_target_postgres": {
+                "sensitive": false,
+                "value": "ttcp_fTABul4BSY"
+            }
+        },
+        "root_module": {
+            "resources": [
+                {
+                    "address": "boundary_account.leadership_user_acct[\"manager\"]",
+                    "index": "manager",
+                    "mode": "managed",
+                    "name": "leadership_user_acct",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {},
+                    "type": "boundary_account",
+                    "values": {
+                        "auth_method_id": "ampw_ePAfzW6AYk",
+                        "description": "User account for manager",
+                        "id": "acctpw_Dq9PcQCYAy",
+                        "login_name": "manager",
+                        "name": "manager",
+                        "password": "foofoofoo",
+                        "type": "password"
+                    }
+                },
+                {
+                    "address": "boundary_account.operations_user_acct[\"ops\"]",
+                    "index": "ops",
+                    "mode": "managed",
+                    "name": "operations_user_acct",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "password": true
+                    },
+                    "type": "boundary_account",
+                    "values": {
+                        "auth_method_id": "ampw_ePAfzW6AYk",
+                        "description": "User account for ops",
+                        "id": "acctpw_LA07Vmkasq",
+                        "login_name": "ops",
+                        "name": "ops",
+                        "password": "REDACTED_SENSITIVE",
+                        "type": "password"
+                    }
+                },
+                {
+                    "address": "boundary_account.products_user_acct[\"appdev\"]",
+                    "index": "appdev",
+                    "mode": "managed",
+                    "name": "products_user_acct",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "password": true
+                    },
+                    "type": "boundary_account",
+                    "values": {
+                        "auth_method_id": "ampw_ePAfzW6AYk",
+                        "description": "User account for appdev",
+                        "id": "acctpw_87tgbiQEvu",
+                        "login_name": "appdev",
+                        "name": "appdev",
+                        "password": "REDACTED_SENSITIVE",
+                        "type": "password"
+                    }
+                },
+                {
+                    "address": "boundary_auth_method.password",
+                    "mode": "managed",
+                    "name": "password",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {},
+                    "type": "boundary_auth_method",
+                    "values": {
+                        "description": "Password auth method for Corp org",
+                        "id": "ampw_ePAfzW6AYk",
+                        "min_login_name_length": 3,
+                        "min_password_length": 8,
+                        "name": "corp_password_auth_method",
+                        "scope_id": "o_t0QCJQwZTb",
+                        "type": "password"
+                    }
+                },
+                {
+                    "address": "boundary_group.leadership",
+                    "mode": "managed",
+                    "name": "leadership",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "member_ids": [
+                            false
+                        ]
+                    },
+                    "type": "boundary_group",
+                    "values": {
+                        "description": "Organization group for leadership team",
+                        "id": "g_4Hgtx9vh5U",
+                        "member_ids": [
+                            "u_bbeqHylc1I"
+                        ],
+                        "name": "leadership_team",
+                        "scope_id": "o_t0QCJQwZTb"
+                    }
+                },
+                {
+                    "address": "boundary_group.operations_team",
+                    "mode": "managed",
+                    "name": "operations_team",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "member_ids": [
+                            false
+                        ]
+                    },
+                    "type": "boundary_group",
+                    "values": {
+                        "description": "Operations team group",
+                        "id": "g_7RM2jGyYaW",
+                        "member_ids": [
+                            "u_429i2oSGHx"
+                        ],
+                        "name": "operations",
+                        "scope_id": "p_Wm0QdQfo3B"
+                    }
+                },
+                {
+                    "address": "boundary_group.products_team",
+                    "mode": "managed",
+                    "name": "products_team",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "member_ids": [
+                            false
+                        ]
+                    },
+                    "type": "boundary_group",
+                    "values": {
+                        "description": "Products team group",
+                        "id": "g_bTOy0vI7Pn",
+                        "member_ids": [
+                            "u_7f70Kc9YQ8"
+                        ],
+                        "name": "products",
+                        "scope_id": "p_ziYr7jV1zt"
+                    }
+                },
+                {
+                    "address": "boundary_host.consul",
+                    "mode": "managed",
+                    "name": "consul",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {},
+                    "type": "boundary_host",
+                    "values": {
+                        "address": "zero.private.consul.11eaeb92-853e-2d98-8405-0242ac110009.aws.hashicorp.cloud",
+                        "description": "HCP Consul Endpoint",
+                        "host_catalog_id": "hcst_dZNxaEN3hB",
+                        "id": "hst_UderMyTdt5",
+                        "name": "hcp_consul",
+                        "type": "static"
+                    }
+                },
+                {
+                    "address": "boundary_host.eks_nodes[\"10.0.1.209\"]",
+                    "index": "10.0.1.209",
+                    "mode": "managed",
+                    "name": "eks_nodes",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {},
+                    "type": "boundary_host",
+                    "values": {
+                        "address": "10.0.1.209",
+                        "description": "EKS Node #10.0.1.209",
+                        "host_catalog_id": "hcst_FB3T8SSGNM",
+                        "id": "hst_ZqZnn7P5nr",
+                        "name": "eks_nodes_10.0.1.209",
+                        "type": "static"
+                    }
+                },
+                {
+                    "address": "boundary_host.eks_nodes[\"10.0.2.62\"]",
+                    "index": "10.0.2.62",
+                    "mode": "managed",
+                    "name": "eks_nodes",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {},
+                    "type": "boundary_host",
+                    "values": {
+                        "address": "10.0.2.62",
+                        "description": "EKS Node #10.0.2.62",
+                        "host_catalog_id": "hcst_FB3T8SSGNM",
+                        "id": "hst_S2GnQmE1bq",
+                        "name": "eks_nodes_10.0.2.62",
+                        "type": "static"
+                    }
+                },
+                {
+                    "address": "boundary_host.eks_nodes[\"10.0.3.51\"]",
+                    "index": "10.0.3.51",
+                    "mode": "managed",
+                    "name": "eks_nodes",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {},
+                    "type": "boundary_host",
+                    "values": {
+                        "address": "10.0.3.51",
+                        "description": "EKS Node #10.0.3.51",
+                        "host_catalog_id": "hcst_FB3T8SSGNM",
+                        "id": "hst_Z2Legm5U8E",
+                        "name": "eks_nodes_10.0.3.51",
+                        "type": "static"
+                    }
+                },
+                {
+                    "address": "boundary_host.products_database",
+                    "mode": "managed",
+                    "name": "products_database",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {},
+                    "type": "boundary_host",
+                    "values": {
+                        "address": "zero-products.c4pet3aulkup.us-east-2.rds.amazonaws.com",
+                        "description": "products database",
+                        "host_catalog_id": "hcst_nPwG69vs6n",
+                        "id": "hst_i4ePfVCrTq",
+                        "name": "products_database",
+                        "type": "static"
+                    }
+                },
+                {
+                    "address": "boundary_host.vault",
+                    "mode": "managed",
+                    "name": "vault",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {},
+                    "type": "boundary_host",
+                    "values": {
+                        "address": "zero.private.vault.11eaeb92-853e-2d98-8405-0242ac110009.aws.hashicorp.cloud",
+                        "description": "HCP Vault Endpoint",
+                        "host_catalog_id": "hcst_g88dKKVcJh",
+                        "id": "hst_cVMoSJtH7o",
+                        "name": "hcp_vault",
+                        "type": "static"
+                    }
+                },
+                {
+                    "address": "boundary_host_catalog.consul",
+                    "mode": "managed",
+                    "name": "consul",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {},
+                    "type": "boundary_host_catalog",
+                    "values": {
+                        "description": "HCP Consul Endpoint",
+                        "id": "hcst_dZNxaEN3hB",
+                        "name": "hcp_consul",
+                        "scope_id": "p_Wm0QdQfo3B",
+                        "type": "static"
+                    }
+                },
+                {
+                    "address": "boundary_host_catalog.eks_nodes",
+                    "mode": "managed",
+                    "name": "eks_nodes",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {},
+                    "type": "boundary_host_catalog",
+                    "values": {
+                        "description": "EKS nodes for operations team",
+                        "id": "hcst_FB3T8SSGNM",
+                        "name": "eks_nodes",
+                        "scope_id": "p_Wm0QdQfo3B",
+                        "type": "static"
+                    }
+                },
+                {
+                    "address": "boundary_host_catalog.products_database",
+                    "mode": "managed",
+                    "name": "products_database",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {},
+                    "type": "boundary_host_catalog",
+                    "values": {
+                        "description": "Products database",
+                        "id": "hcst_nPwG69vs6n",
+                        "name": "products_database",
+                        "scope_id": "p_ziYr7jV1zt",
+                        "type": "static"
+                    }
+                },
+                {
+                    "address": "boundary_host_catalog.vault",
+                    "mode": "managed",
+                    "name": "vault",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {},
+                    "type": "boundary_host_catalog",
+                    "values": {
+                        "description": "HCP Vault Endpoint",
+                        "id": "hcst_g88dKKVcJh",
+                        "name": "hcp_vault",
+                        "scope_id": "p_Wm0QdQfo3B",
+                        "type": "static"
+                    }
+                },
+                {
+                    "address": "boundary_host_set.consul",
+                    "mode": "managed",
+                    "name": "consul",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "host_ids": [
+                            false
+                        ]
+                    },
+                    "type": "boundary_host_set",
+                    "values": {
+                        "description": "Host set for HCP Consul",
+                        "host_catalog_id": "hcst_dZNxaEN3hB",
+                        "host_ids": [
+                            "hst_UderMyTdt5"
+                        ],
+                        "id": "hsst_yRMhECTF4p",
+                        "name": "hcp_consul",
+                        "type": "static"
+                    }
+                },
+                {
+                    "address": "boundary_host_set.eks_nodes",
+                    "mode": "managed",
+                    "name": "eks_nodes",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "host_ids": [
+                            false,
+                            false,
+                            false
+                        ]
+                    },
+                    "type": "boundary_host_set",
+                    "values": {
+                        "description": "Host set for EKS nodes",
+                        "host_catalog_id": "hcst_FB3T8SSGNM",
+                        "host_ids": [
+                            "hst_S2GnQmE1bq",
+                            "hst_Z2Legm5U8E",
+                            "hst_ZqZnn7P5nr"
+                        ],
+                        "id": "hsst_0Mec3mN9CH",
+                        "name": "eks_nodes",
+                        "type": "static"
+                    }
+                },
+                {
+                    "address": "boundary_host_set.products_database",
+                    "mode": "managed",
+                    "name": "products_database",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "host_ids": [
+                            false
+                        ]
+                    },
+                    "type": "boundary_host_set",
+                    "values": {
+                        "description": "Host set for Product Database",
+                        "host_catalog_id": "hcst_nPwG69vs6n",
+                        "host_ids": [
+                            "hst_i4ePfVCrTq"
+                        ],
+                        "id": "hsst_kPw56ZI9KF",
+                        "name": "products_database",
+                        "type": "static"
+                    }
+                },
+                {
+                    "address": "boundary_host_set.vault",
+                    "mode": "managed",
+                    "name": "vault",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "host_ids": [
+                            false
+                        ]
+                    },
+                    "type": "boundary_host_set",
+                    "values": {
+                        "description": "Host set for HCP Vault",
+                        "host_catalog_id": "hcst_g88dKKVcJh",
+                        "host_ids": [
+                            "hst_cVMoSJtH7o"
+                        ],
+                        "id": "hsst_qSkHkDB9pU",
+                        "name": "hcp_vault",
+                        "type": "static"
+                    }
+                },
+                {
+                    "address": "boundary_role.global_anon_listing",
+                    "mode": "managed",
+                    "name": "global_anon_listing",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "grant_strings": [
+                            false,
+                            false,
+                            false
+                        ],
+                        "principal_ids": [
+                            false
+                        ]
+                    },
+                    "type": "boundary_role",
+                    "values": {
+                        "default_role": null,
+                        "description": "",
+                        "grant_scope_id": "global",
+                        "grant_strings": [
+                            "id=*;type=auth-method;actions=list,authenticate",
+                            "id={{account.id}};actions=read,change-password",
+                            "type=scope;actions=list"
+                        ],
+                        "id": "r_kJT5BPFcJQ",
+                        "name": "",
+                        "principal_ids": [
+                            "u_anon"
+                        ],
+                        "scope_id": "global"
+                    }
+                },
+                {
+                    "address": "boundary_role.org_admin",
+                    "mode": "managed",
+                    "name": "org_admin",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "grant_strings": [
+                            false
+                        ],
+                        "principal_ids": [
+                            false
+                        ]
+                    },
+                    "type": "boundary_role",
+                    "values": {
+                        "default_role": null,
+                        "description": "",
+                        "grant_scope_id": "o_t0QCJQwZTb",
+                        "grant_strings": [
+                            "id=*;type=*;actions=*"
+                        ],
+                        "id": "r_UXciSDNR9t",
+                        "name": "",
+                        "principal_ids": [
+                            "g_7RM2jGyYaW"
+                        ],
+                        "scope_id": "global"
+                    }
+                },
+                {
+                    "address": "boundary_role.org_anon_listing",
+                    "mode": "managed",
+                    "name": "org_anon_listing",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "grant_strings": [
+                            false,
+                            false,
+                            false
+                        ],
+                        "principal_ids": [
+                            false
+                        ]
+                    },
+                    "type": "boundary_role",
+                    "values": {
+                        "default_role": null,
+                        "description": "",
+                        "grant_scope_id": "o_t0QCJQwZTb",
+                        "grant_strings": [
+                            "id=*;type=auth-method;actions=list,authenticate",
+                            "id={{account.id}};actions=read,change-password",
+                            "type=scope;actions=list"
+                        ],
+                        "id": "r_LCTkufjcYW",
+                        "name": "",
+                        "principal_ids": [
+                            "u_anon"
+                        ],
+                        "scope_id": "o_t0QCJQwZTb"
+                    }
+                },
+                {
+                    "address": "boundary_role.org_readonly",
+                    "mode": "managed",
+                    "name": "org_readonly",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "grant_strings": [
+                            false,
+                            false,
+                            false
+                        ],
+                        "principal_ids": [
+                            false,
+                            false
+                        ]
+                    },
+                    "type": "boundary_role",
+                    "values": {
+                        "default_role": null,
+                        "description": "Read-only role",
+                        "grant_scope_id": "o_t0QCJQwZTb",
+                        "grant_strings": [
+                            "id=*;type=*;actions=read",
+                            "id=*;type=session;actions=read,list",
+                            "id=*;type=target;actions=read,list,authorize-session"
+                        ],
+                        "id": "r_Qf9JqqMKrl",
+                        "name": "readonly",
+                        "principal_ids": [
+                            "g_4Hgtx9vh5U",
+                            "g_bTOy0vI7Pn"
+                        ],
+                        "scope_id": "global"
+                    }
+                },
+                {
+                    "address": "boundary_role.project_admin",
+                    "mode": "managed",
+                    "name": "project_admin",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "grant_strings": [
+                            false
+                        ],
+                        "principal_ids": [
+                            false
+                        ]
+                    },
+                    "type": "boundary_role",
+                    "values": {
+                        "default_role": null,
+                        "description": "Administrator role for core infra",
+                        "grant_scope_id": "p_Wm0QdQfo3B",
+                        "grant_strings": [
+                            "id=*;type=*;actions=*"
+                        ],
+                        "id": "r_cKvSBRzu4x",
+                        "name": "core_infra_admin",
+                        "principal_ids": [
+                            "g_7RM2jGyYaW"
+                        ],
+                        "scope_id": "o_t0QCJQwZTb"
+                    }
+                },
+                {
+                    "address": "boundary_role.project_admin_products",
+                    "mode": "managed",
+                    "name": "project_admin_products",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "grant_strings": [
+                            false
+                        ],
+                        "principal_ids": [
+                            false,
+                            false
+                        ]
+                    },
+                    "type": "boundary_role",
+                    "values": {
+                        "default_role": null,
+                        "description": "Administrator role for products infra",
+                        "grant_scope_id": "p_ziYr7jV1zt",
+                        "grant_strings": [
+                            "id=*;type=*;actions=*"
+                        ],
+                        "id": "r_JvwxpU1xyd",
+                        "name": "products_infra_admin",
+                        "principal_ids": [
+                            "g_7RM2jGyYaW",
+                            "g_bTOy0vI7Pn"
+                        ],
+                        "scope_id": "o_t0QCJQwZTb"
+                    }
+                },
+                {
+                    "address": "boundary_scope.core_infra",
+                    "mode": "managed",
+                    "name": "core_infra",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {},
+                    "type": "boundary_scope",
+                    "values": {
+                        "auto_create_admin_role": true,
+                        "auto_create_default_role": true,
+                        "description": "Operations infrastructure project",
+                        "global_scope": null,
+                        "id": "p_Wm0QdQfo3B",
+                        "name": "core_infra",
+                        "scope_id": "o_t0QCJQwZTb"
+                    }
+                },
+                {
+                    "address": "boundary_scope.global",
+                    "mode": "managed",
+                    "name": "global",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {},
+                    "type": "boundary_scope",
+                    "values": {
+                        "auto_create_admin_role": null,
+                        "auto_create_default_role": null,
+                        "description": "Global Scope",
+                        "global_scope": true,
+                        "id": "global",
+                        "name": "global",
+                        "scope_id": "global"
+                    }
+                },
+                {
+                    "address": "boundary_scope.org",
+                    "mode": "managed",
+                    "name": "org",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {},
+                    "type": "boundary_scope",
+                    "values": {
+                        "auto_create_admin_role": null,
+                        "auto_create_default_role": null,
+                        "description": "Organization scope",
+                        "global_scope": null,
+                        "id": "o_t0QCJQwZTb",
+                        "name": "organization",
+                        "scope_id": "global"
+                    }
+                },
+                {
+                    "address": "boundary_scope.products_infra",
+                    "mode": "managed",
+                    "name": "products_infra",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {},
+                    "type": "boundary_scope",
+                    "values": {
+                        "auto_create_admin_role": true,
+                        "auto_create_default_role": true,
+                        "description": "Products infrastructure project",
+                        "global_scope": null,
+                        "id": "p_ziYr7jV1zt",
+                        "name": "products_infra",
+                        "scope_id": "o_t0QCJQwZTb"
+                    }
+                },
+                {
+                    "address": "boundary_target.consul",
+                    "mode": "managed",
+                    "name": "consul",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "application_credential_library_ids": [],
+                        "host_set_ids": [
+                            false
+                        ]
+                    },
+                    "type": "boundary_target",
+                    "values": {
+                        "application_credential_library_ids": [],
+                        "default_port": 443,
+                        "description": "HCP Consul Target",
+                        "host_set_ids": [
+                            "hsst_yRMhECTF4p"
+                        ],
+                        "id": "ttcp_CYrRMsT0dY",
+                        "name": "hcp_consul",
+                        "scope_id": "p_Wm0QdQfo3B",
+                        "session_connection_limit": -1,
+                        "session_max_seconds": 28800,
+                        "type": "tcp",
+                        "worker_filter": ""
+                    }
+                },
+                {
+                    "address": "boundary_target.eks_nodes_ssh",
+                    "mode": "managed",
+                    "name": "eks_nodes_ssh",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "application_credential_library_ids": [],
+                        "host_set_ids": [
+                            false
+                        ]
+                    },
+                    "type": "boundary_target",
+                    "values": {
+                        "application_credential_library_ids": [],
+                        "default_port": 22,
+                        "description": "EKS Nodes SSH target",
+                        "host_set_ids": [
+                            "hsst_0Mec3mN9CH"
+                        ],
+                        "id": "ttcp_jwREIXrmDA",
+                        "name": "eks_nodes_ssh",
+                        "scope_id": "p_Wm0QdQfo3B",
+                        "session_connection_limit": -1,
+                        "session_max_seconds": 28800,
+                        "type": "tcp",
+                        "worker_filter": ""
+                    }
+                },
+                {
+                    "address": "boundary_target.products_database_postgres",
+                    "mode": "managed",
+                    "name": "products_database_postgres",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "application_credential_library_ids": [],
+                        "host_set_ids": [
+                            false
+                        ]
+                    },
+                    "type": "boundary_target",
+                    "values": {
+                        "application_credential_library_ids": [],
+                        "default_port": 5432,
+                        "description": "Products Database Postgres Target",
+                        "host_set_ids": [
+                            "hsst_kPw56ZI9KF"
+                        ],
+                        "id": "ttcp_fTABul4BSY",
+                        "name": "products_database_postgres",
+                        "scope_id": "p_ziYr7jV1zt",
+                        "session_connection_limit": -1,
+                        "session_max_seconds": 28800,
+                        "type": "tcp",
+                        "worker_filter": ""
+                    }
+                },
+                {
+                    "address": "boundary_target.vault",
+                    "mode": "managed",
+                    "name": "vault",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "application_credential_library_ids": [],
+                        "host_set_ids": [
+                            false
+                        ]
+                    },
+                    "type": "boundary_target",
+                    "values": {
+                        "application_credential_library_ids": [],
+                        "default_port": 8200,
+                        "description": "HCP Vault Target",
+                        "host_set_ids": [
+                            "hsst_qSkHkDB9pU"
+                        ],
+                        "id": "ttcp_BeAafyUlvY",
+                        "name": "hcp_vault",
+                        "scope_id": "p_Wm0QdQfo3B",
+                        "session_connection_limit": -1,
+                        "session_max_seconds": 28800,
+                        "type": "tcp",
+                        "worker_filter": ""
+                    }
+                },
+                {
+                    "address": "boundary_user.leadership[\"manager\"]",
+                    "index": "manager",
+                    "mode": "managed",
+                    "name": "leadership",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "account_ids": [
+                            false
+                        ]
+                    },
+                    "type": "boundary_user",
+                    "values": {
+                        "account_ids": [
+                            "acctpw_Dq9PcQCYAy"
+                        ],
+                        "description": "WARNING: Managers should be read-only",
+                        "id": "u_bbeqHylc1I",
+                        "name": "manager",
+                        "scope_id": "o_t0QCJQwZTb"
+                    }
+                },
+                {
+                    "address": "boundary_user.operations[\"ops\"]",
+                    "index": "ops",
+                    "mode": "managed",
+                    "name": "operations",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "account_ids": [
+                            false
+                        ]
+                    },
+                    "type": "boundary_user",
+                    "values": {
+                        "account_ids": [
+                            "acctpw_LA07Vmkasq"
+                        ],
+                        "description": "Operations user: ops",
+                        "id": "u_429i2oSGHx",
+                        "name": "ops",
+                        "scope_id": "o_t0QCJQwZTb"
+                    }
+                },
+                {
+                    "address": "boundary_user.products[\"appdev\"]",
+                    "index": "appdev",
+                    "mode": "managed",
+                    "name": "products",
+                    "provider_name": "registry.terraform.io/hashicorp/boundary",
+                    "schema_version": 0,
+                    "sensitive_values": {
+                        "account_ids": [
+                            false
+                        ]
+                    },
+                    "type": "boundary_user",
+                    "values": {
+                        "account_ids": [
+                            "acctpw_87tgbiQEvu"
+                        ],
+                        "description": "Products user: appdev",
+                        "id": "u_7f70Kc9YQ8",
+                        "name": "appdev",
+                        "scope_id": "o_t0QCJQwZTb"
+                    }
+                },
+                {
+                    "address": "random_password.operations_team",
+                    "mode": "managed",
+                    "name": "operations_team",
+                    "provider_name": "registry.terraform.io/hashicorp/random",
+                    "schema_version": 0,
+                    "sensitive_values": {},
+                    "type": "random_password",
+                    "values": {
+                        "id": "none",
+                        "keepers": null,
+                        "length": 16,
+                        "lower": true,
+                        "min_lower": 0,
+                        "min_numeric": 0,
+                        "min_special": 0,
+                        "min_upper": 0,
+                        "number": true,
+                        "override_special": "_%@",
+                        "result": "REDACTED_SENSITIVE",
+                        "special": true,
+                        "upper": true
+                    }
+                },
+                {
+                    "address": "random_password.products_team",
+                    "mode": "managed",
+                    "name": "products_team",
+                    "provider_name": "registry.terraform.io/hashicorp/random",
+                    "schema_version": 0,
+                    "sensitive_values": {},
+                    "type": "random_password",
+                    "values": {
+                        "id": "none",
+                        "keepers": null,
+                        "length": 16,
+                        "lower": true,
+                        "min_lower": 0,
+                        "min_numeric": 0,
+                        "min_special": 0,
+                        "min_upper": 0,
+                        "number": true,
+                        "override_special": "_%@",
+                        "result": "REDACTED_SENSITIVE",
+                        "special": true,
+                        "upper": true
+                    }
+                }
+            ]
+        }
+    }
+}

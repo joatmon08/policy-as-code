@@ -6,11 +6,11 @@ variable "project" {
   })
 }
 
-variable "user" {
+variable "users" {
   type = object({
-    gcp   = string
-    aws   = string
-    azure = string
+    owner  = list(string)
+    editor = list(string)
+    reader = list(string)
   })
 }
 
